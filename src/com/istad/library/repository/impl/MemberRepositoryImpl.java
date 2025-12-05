@@ -15,20 +15,9 @@ public class MemberRepositoryImpl implements MemberRepository {
     public MemberRepositoryImpl() {
         Member m1 = new Member(UUID.randomUUID().toString(), "alice01", "pass123", "Alice", "alice@example.com", "0123456789");
         Member m2 = new Member(UUID.randomUUID().toString(), "bob02", "pass123", "Bob", "bob@example.com", "0987654321");
-        Member m3 = new Member(UUID.randomUUID().toString(), "bob02", "pass123", "Bob", "bob@example.com", "0987654321");
-        Member m4 = new Member(UUID.randomUUID().toString(), "bob02", "pass123", "Bob", "bob@example.com", "0987654321");
-        Member m5 = new Member(UUID.randomUUID().toString(), "bob02", "pass123", "Bob", "bob@example.com", "0987654321");
-        Member m6 = new Member(UUID.randomUUID().toString(), "bob02", "pass123", "Bob", "bob@example.com", "0987654321");
-        Member m7 = new Member(UUID.randomUUID().toString(), "bob02", "pass123", "Bob", "bob@example.com", "0987654321");
-        Member m8 = new Member(UUID.randomUUID().toString(), "bob02", "pass123", "Bob", "bob@example.com", "0987654321");
+
         members.add(m1);
         members.add(m2);
-        members.add(m3);
-        members.add(m4);
-        members.add(m5);
-        members.add(m6);
-        members.add(m7);
-        members.add(m8);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.istad.library.view;
 
 import com.istad.library.controller.BookController;
+import com.istad.library.model.Book;
 import com.istad.library.model.BorrowHistory;
 import com.istad.library.model.Member;
 import com.istad.library.service.BookService;
@@ -248,6 +249,11 @@ public class AdminView {
 
     private void deleteMember() {
         String uuid = InputUtil.getText("Enter Member UUID to delete:");
+        Book existing = bookController.getBookService().findByUUID(uuid);
+        if (existing == null) {
+            TableUtil.print("Book not found!", true);
+            return;
+        }
         memberService.delete(uuid);
         TableUtil.printHeader("Member deleted successfully!");
     }
@@ -255,6 +261,10 @@ public class AdminView {
     private void searchMember() {
         String name = InputUtil.getText("Enter name to search:");
         List<Member> result = memberService.searchByName(name);
+        if (result == null) {
+            TableUtil.print("Book not found!", true);
+            return;
+        }
         TableUtil.printMember(result);
     }
 }

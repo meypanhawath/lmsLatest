@@ -119,7 +119,7 @@ public class BookView {
         int year = Integer.parseInt(yearStr);
 
         // Create new Book object
-        Book newBook = new Book(java.util.UUID.randomUUID().toString(), title, author, isbn, year, true);
+        Book newBook = new Book(java.util.UUID.randomUUID().toString(), title, author, isbn,  year, true);
 
         // Add book using controller
         bookController.getBookService().addNew(newBook);
@@ -155,6 +155,11 @@ public class BookView {
 
     private void deleteBook() {
         String uuid = InputUtil.getText("Enter Book UUID to delete:");
+        Book existing = bookController.getBookService().findByUUID(uuid);
+        if (existing == null) {
+            TableUtil.print("Book not found!", true);
+            return;
+        }
         bookController.getBookService().delete(uuid);
         TableUtil.printHeader("Book deleted successfully!");
     }
@@ -162,6 +167,10 @@ public class BookView {
     private void searchBook() {
         String keyword = InputUtil.getText("Enter title or author to search:");
         List<Book> result = bookController.getBookService().search(keyword);
+        if (result == null) {
+            TableUtil.print("Book not found!", true);
+            return;
+        }
         printBooks(result);
     }
 

@@ -15,21 +15,10 @@ public class BookRepositoryImpl implements BookRepository {
         if (bookList.isEmpty()) {
             Book b1 = new Book(UUID.randomUUID().toString(), "Clean Code", "Robert Martin", "978-01323", 2008, true);
             Book b2 = new Book(UUID.randomUUID().toString(), "Java Programming", "James Gosling", "978-09999", 2020, false);
-            Book b3 = new Book(UUID.randomUUID().toString(), "Java Programming", "James Gosling", "978-09999", 2020, false);
-            Book b4 = new Book(UUID.randomUUID().toString(), "Java Programming", "James Gosling", "978-09999", 2020, false);
-            Book b5 = new Book(UUID.randomUUID().toString(), "Java Programming", "James Gosling", "978-09999", 2020, false);
-            Book b6 = new Book(UUID.randomUUID().toString(), "Java Programming", "James Gosling", "978-09999", 2020, false);
-            Book b7 = new Book(UUID.randomUUID().toString(), "Java Programming", "James Gosling", "978-09999", 2020, false);
-            Book b8 = new Book(UUID.randomUUID().toString(), "Java Programming", "James Gosling", "978-09999", 2020, false);
+
 
             bookList.add(b1);
             bookList.add(b2);
-            bookList.add(b3);
-            bookList.add(b4);
-            bookList.add(b5);
-            bookList.add(b6);
-            bookList.add(b7);
-            bookList.add(b8);
         }
     }
 
